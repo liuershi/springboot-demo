@@ -3,6 +3,7 @@ package cn.infocore.config;
 import com.alibaba.druid.pool.DruidDataSource;
 import com.alibaba.druid.support.http.StatViewServlet;
 import com.alibaba.druid.support.http.WebStatFilter;
+import org.mybatis.spring.boot.autoconfigure.ConfigurationCustomizer;
 import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.boot.web.servlet.FilterRegistrationBean;
 import org.springframework.boot.web.servlet.ServletRegistrationBean;
@@ -56,5 +57,12 @@ public class DruidConfig {
         bean.setInitParameters(initParams);
         bean.setUrlPatterns(Arrays.asList("/*"));
         return bean;
+    }
+
+    // 开启驼峰命名法：personId <--> person_id
+    @Bean
+    public ConfigurationCustomizer configurationCustomizer() {
+        ConfigurationCustomizer customizer = configuration -> configuration.setMapUnderscoreToCamelCase(true);
+        return customizer;
     }
 }
