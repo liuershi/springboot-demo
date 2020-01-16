@@ -6,7 +6,7 @@ import org.apache.ibatis.annotations.*;
 /**
  * @author wei.zhang@infocore.cn
  * @date 2020/1/15 14:40
- * @instructions
+ * @instructions 使用注解方法操作数据库
  */
 // 指定这是操作数据库的mapper
 @Mapper
