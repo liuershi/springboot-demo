@@ -33,6 +33,15 @@ spring:
       filters: stat, wall, log4j
       useGlobalDataSourceStat: true
       connectionProperties: druid.stat.mergeSql=true;druid.stat.slowSqlMillis=500
+###########################JPA###########################
+  jpa:
+    hibernate:
+      # 更新或者创建数据表
+      ddl-auto: update
+    # 控制台显示sql
+    show-sql: true
+
+###########################整合mybatis配置文件类型###########################
 mybatis:
   config-location: classpath:mybatis/mybatis-config.xml
   mapper-locations: classpath:mybatis/mapper/*.xml
