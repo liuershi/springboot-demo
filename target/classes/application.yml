@@ -46,5 +46,11 @@ mybatis:
   config-location: classpath:mybatis/mybatis-config.xml
   mapper-locations: classpath:mybatis/mapper/*.xml
 
-#infocore.staremer.name=jack
-#infocore.staremer.message=nihao
+#打印mapper执行的sql
+logging:
+  level:
+    cn:
+      infocore:
+        mapper: debug
+
+debug: true
