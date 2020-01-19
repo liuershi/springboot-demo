@@ -53,4 +53,5 @@ logging:
       infocore:
         mapper: debug
 
-debug: true
+#开启初始化配置打印
+#debug: true

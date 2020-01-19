@@ -14,8 +14,8 @@ public interface DepartmentMapper {
     @Select("SELECT* FROM department where id=#{id}")
     Department getDeptById(Integer id);
 
-    @Update("UPDATE department set dt_id = #{dt_id} where id=#{id}")
-    Department updateDeptById(Department department);
+    @Update("UPDATE department set name=#{name},age=#{age},dt_id = #{dt_id} where id=#{id}")
+    Integer updateDeptById(Department department);
 
     @Options(useGeneratedKeys = true, keyProperty = "id")
     @Insert("INSERT INTO department VALUES (#{id},#{name},#{age},#{dt_id})")
